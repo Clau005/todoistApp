@@ -1,11 +1,14 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script>
+   export default  {
+        name: 'Login'
+    }
 </script>
 
 <template>
-  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div>
+        <h1>Login</h1>
+    </div>
+    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
   <div class="sm:mx-auto sm:w-full sm:max-w-sm">
     <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
     <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
@@ -44,28 +47,3 @@ defineProps<{
   </div>
 </div>
 </template>
-
-<style scoped>
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
-}
-</style>
