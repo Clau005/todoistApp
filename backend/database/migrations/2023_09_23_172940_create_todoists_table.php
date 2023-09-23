@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('todoists', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->foreignIdFor(App\Models\Team::Class, 'team_id');
+            $table->string('title');
+            $table->string('description');
+            $table->foreignIdFor(App\Models\User::class,  'user_id');
+            $table->string('status')->default('open');
+            $table->date('deadline');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('todoists');
     }
 };
