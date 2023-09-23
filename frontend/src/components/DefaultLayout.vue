@@ -8,7 +8,7 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
 import { useStore } from "vuex";
 import { computed } from "vue";
 import { useRouter } from "vue-router";
@@ -28,6 +28,9 @@ export default {
     MenuButton,
     MenuItem,
     MenuItems,
+    BellIcon,
+    MenuIcon,
+    XIcon,
     Notification,
   },
   setup() {

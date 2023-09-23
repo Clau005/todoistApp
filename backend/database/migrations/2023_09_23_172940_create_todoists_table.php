@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->foreignIdFor(App\Models\User::class,  'user_id');
+            $table->foreignIdFor(App\Models\User::class,  'assignee_id');
             $table->string('status')->default('open');
             $table->date('deadline');
             $table->timestamps();
