@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'team_id'
     ];
 
     /**
@@ -42,4 +43,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    public function team(): belongsTo
+    {
+        return $this->belongsTo(App\Models\Team::class);
+    }
+
+    public function todo(): hasMany
+    {
+        return $this->hasMany(App\Models\Todo::class);
+    }
 }
