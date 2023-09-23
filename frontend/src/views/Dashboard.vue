@@ -1,8 +1,10 @@
 <script lang="ts" >
+import { defineComponent } from 'vue';
 
-    export default  {
-        name: 'Dashboard'
-    }
+
+    export default  defineComponent({
+        name : "Dashboard"
+    })
 </script>
 
 <template>

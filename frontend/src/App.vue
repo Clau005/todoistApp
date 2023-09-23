@@ -1,9 +1,19 @@
-<script setup lang="ts">
+<script  lang="ts">
+import { defineComponent } from "vue";
+import {mapState} from "vuex"
 
+export default defineComponent({
+  
+  computed: {
+    ...mapState(['user'])
+  }
+})
 </script>
 
+
 <template>
-  <router-view></router-view>
+  <div>{{ user.data.name }}</div>
+  <router-view :key="$route.path"></router-view>
 </template>
 
 
