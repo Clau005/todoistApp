@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->foreignIdFor(App\Models\Team::Class, 'team_id');
             $table->timestamps();
         });
     }
