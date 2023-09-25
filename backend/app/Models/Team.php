@@ -14,13 +14,13 @@ class Team extends Model
         'name'
     ];
 
-    public function project() : hasMany 
-    {
-           return $this->hasMany(App\Models\Project::class);
-    }
+    // public function project() : hasMany 
+    // {
+    //        return $this->hasMany(App\Models\Project::class);
+    // }
 
-    public function user(): hasMany
-    {
-        return $this->hasMany(App\Models\User::class);
-    }
+    // public function user(): hasMany
+    // {
+    //     return $this->hasMany(App\Models\User::class);
+    // }
 }
