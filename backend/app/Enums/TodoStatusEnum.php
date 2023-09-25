@@ -8,8 +8,8 @@ namespace App\Enums;
 
 enum TodoStatusEnum:string {
 
-    case Open = 'open';
+    case OPEN = 'open';
 
-    case Closed = 'closed';
+    case CLOSED = 'closed';
 
 }

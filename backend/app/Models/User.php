@@ -45,11 +45,6 @@ class User extends Authenticatable
     ];
 
 
-    public function team(): belongsTo
-    {
-        return $this->belongsTo(App\Models\Team::class);
-    }
-
     public function todo(): hasMany
     {
         return $this->hasMany(App\Models\Todo::class);

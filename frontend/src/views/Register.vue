@@ -11,14 +11,12 @@ const router = useRouter()
   }
 
   const session =  sessionStorage.getItem("TOKEN")
-  console.log(session, 'session storage')
 
   const handleRegistration = (event) => {
-    console.log('register function triggered');
+
     event.preventDefault();
     store.dispatch('register', user)
     .then((res) => {
-      console.log(res, res)
       router.push({
         name : 'Dashboard'
       })

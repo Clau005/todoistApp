@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Todo extends Model
 {
     use HasFactory;
+    protected $table = 'todoists';
 
     protected $fillable = [
         'title',
         'description',
-        'assignee_id',
-        'status'
+        'user_id',
+        'status',
+        'due_date'
     ];
 
     public function user() : belongsTo

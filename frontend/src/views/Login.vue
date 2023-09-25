@@ -7,7 +7,7 @@ import {ref} from 'vue'
     password : ''
   }
 
-  console.log(user, 'user')
+
 
   const router = useRouter()
   let errorMessage = ref('')
@@ -16,13 +16,11 @@ import {ref} from 'vue'
     event.preventDefault();
     store.dispatch('login', user)
     .then((res) => {
-      console.log(res, 'res login');
       router.push({
         name: 'Dashboard'
       })
     })
     .catch(error => {
-      console.log(error, 'error')
       errorMessage.value = error.response.data.message || error.response.data.error
     }) 
   }

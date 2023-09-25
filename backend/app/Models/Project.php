@@ -14,10 +14,10 @@ class Project extends Model
         'team_id'
     ];
 
-    public function team() : BelongsTo 
-    {
-           return $this->belongsTo(App\Models\Team::class);
-    }
+    // public function team() : BelongsTo 
+    // {
+    //        return $this->belongsTo(App\Models\Team::class);
+    // }
 
 
 }

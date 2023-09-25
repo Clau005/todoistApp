@@ -5,6 +5,7 @@ import Register from '../views/Register.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Login from '../views/Login.vue'
 import store from "../store"
+import NotFound from "../views/NotFound.vue";
 
 const routes =  [
     {
@@ -38,6 +39,11 @@ const routes =  [
           component: Login
         },
       ]
+    },
+    {
+      path: '/404',
+      name: 'NotFound',
+      component: NotFound
     }
    
   ]

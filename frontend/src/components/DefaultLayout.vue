@@ -6,23 +6,13 @@ import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 
 
-// const user = {
-//   name: 'Tom Cook',
-//   email: 'tom@example.com',
-//   imageUrl:
-//     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-// }
 
 const navigation = [
   { name: 'Dashboard', to: {name: 'Dashboard'}},
-  { name: 'Team', to: {name: 'Dashboard'}},
-  { name: 'Projects', to: {name: 'Dashboard'}},
-  { name: 'Reports', to: {name: 'Dashboard'}},
+  // { name: 'Team', to: {name: 'Dashboard'}},
+  // { name: 'Projects', to: {name: 'Dashboard'}},
+  // { name: 'Reports', to: {name: 'Dashboard'}}, //will add teams and project as features
 ]
-
-
-
-console.log('test')
 
 export default {
     components: {
@@ -42,7 +32,6 @@ export default {
         const router = useRouter();
 
         const handleSignOut = () => {
-            console.log('logout test')
             store.dispatch('logout')
             .then(() => {
               router.push({name: 'Login'})
@@ -64,21 +53,13 @@ export default {
 
 
 <template>
-    <!--
-      This example requires updating your template:
-  
-      ```
-      <html class="h-full bg-gray-100">
-      <body class="h-full">
-      ```
-    -->
-    <div class="min-h-full">
+    <div class="min-h-full w-full">
       <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="flex h-16 items-center justify-between">
             <div class="flex items-center">
               <div class="flex-shrink-0">
-                <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+                <h1 class="text-2xl text-indigo-200 font-bold text-center">TODOIST</h1>
               </div>
               <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
@@ -110,9 +91,9 @@ export default {
                 <Menu as="div" class="relative ml-3">
                   <div>
                     <MenuButton class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                      <span class="absolute -inset-1.5" />
+                      <span class="absolute -inset-1.5 text-blue-600" />
                       <span class="sr-only">Open user menu</span>
-                      <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt="" />
+                      <Bars3Icon class="h-6 w-6 text-white" aria-hidden="true" />
                     </MenuButton>
                   </div>
                   <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
@@ -181,7 +162,9 @@ export default {
         </DisclosurePanel>
       </Disclosure>
   
-      <router-view></router-view>
+      <div class="w-[90%] m-auto">
+        <router-view></router-view>
+      </div>
     </div>
   </template>
   
